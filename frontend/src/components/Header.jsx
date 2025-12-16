@@ -1,15 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <header>
             <nav>
-                <a href="#" className="logo">
-                    {/*<div className="logo-icon">🎓</div>*/}
+                <Link to="/" className="logo">
                     <div className="logo-text">Uni<span>Ri</span>de</div>
-                </a>
+                </Link>
                 <div className="nav-actions">
-                    <button className="btn btn-ghost">Prijava</button>
+                    <Link to="/login">
+                        <button className="btn btn-ghost">Prijava</button>
+                    </Link>
                     <button className="btn btn-primary">Objavi prijevoz</button>
                     <div className="avatar">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

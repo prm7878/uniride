@@ -1,0 +1,72 @@
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* stavimo kolonu da tekst bude ispod forme */
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.login-form {
+  width: 420px;
+  padding: 30px;
+  border-radius: 16px;
+  background: #1b1b2e; /* samo forma ima boju */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: none; /* nema sjene */
+}
+
+.login-title {
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.login-input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #2a2a3d;
+  color: white;
+}
+
+.login-input::placeholder {
+  color: #b0b0c3;
+}
+
+.login-button {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: linear-gradient(90deg, #6a5cff, #9b5cff);
+  color: white;
+}
+
+.login-button:hover {
+  opacity: 0.9;
+}
+
+/* ovo je tvoj registracija tekst, sad će biti ispod forme */
+.login-footer {
+  margin-top: 15px; /* razmak između forme i teksta */
+  text-align: center;
+  color: #b0b0c3;
+  font-size: 14px;
+}
+
+.login-footer a {
+  color: #6a5cff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
