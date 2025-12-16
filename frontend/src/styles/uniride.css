@@ -243,6 +243,7 @@ nav {
     gap: 4rem;
     align-items: center;
 }*/
+/*CSS za polaziste i odrediste landing pagea*/
 .autocomplete-wrapper {
     position: relative;
 }
@@ -283,7 +284,136 @@ nav {
 .autocomplete-dropdown li:last-child {
     border-radius: 0 0 8px 8px;
 }
+/*CSS datum landing pagea*/
+/* Calendar wrapper */
+.calendar-wrapper {
+    position: relative;
+}
 
+.calendar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+}
+
+.calendar-container {
+    position: absolute;
+    bottom: calc(100% + 12px); /* Iznad inputa */
+    left: 50%; /* Centriran */
+    transform: translateX(-50%); /* Točno centriraj */
+    z-index: 1000;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* React Calendar Custom Styling */
+.react-calendar {
+    background: #27272a !important;
+    border: 1px solid #7447a8 !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    font-family: inherit !important;
+    width: 320px !important;
+}
+
+.react-calendar__navigation {
+    display: flex !important;
+    height: 44px !important;
+    margin-bottom: 12px !important;
+}
+
+.react-calendar__navigation button {
+    background: transparent !important;
+    color: #e2e8f0 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    min-width: 44px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    transition: background 0.2s !important;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+    background: #8b4ac7 !important;
+}
+
+.react-calendar__navigation button:disabled {
+    opacity: 0.3 !important;
+}
+
+.react-calendar__month-view__weekdays {
+    text-align: center !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    text-transform: uppercase !important;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+    padding: 8px !important;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+    text-decoration: none !important;
+}
+
+.react-calendar__tile {
+    background: transparent !important;
+    color: #ffffff !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    transition: all 0.2s !important;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+    background: #3a3355 !important;
+    color: #fff !important;
+}
+
+.react-calendar__tile--now {
+    background: #463355 !important;
+    color: #fff !important;
+}
+
+.react-calendar__tile--active {
+    background: #9c3bf6 !important;
+    color: #fff !important;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+    background: #8b25eb !important;
+}
+
+.react-calendar__tile--neighboringMonth {
+    color: #574769 !important;
+}
+
+.react-calendar__tile:disabled {
+    color: #5e4769 !important;
+    opacity: 0.5 !important;
+}
+
+.react-calendar__month-view__days__day--weekend {
+    color: #a655f7 !important;
+}
+
+.react-calendar__year-view .react-calendar__tile,
+.react-calendar__decade-view .react-calendar__tile,
+.react-calendar__century-view .react-calendar__tile {
+    padding: 16px !important;
+}
 /* Search Section */
 .search-section {
     animation: slideUp 0.8s ease-out;
