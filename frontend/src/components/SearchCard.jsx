@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
 
 const SearchCard = () => {
+    const cities = [
+        "Zagreb",
+        "Split",
+        "Rijeka",
+        "Osijek",
+        "Zadar",
+        "Pula",
+        "Dubrovnik",
+        "Karlovac",
+        "Varaždin",
+        "Šibenik",
+        "Slavonski Brod",
+        "Velika Gorica"
+    ];
+
     const [formData, setFormData] = useState({
         polaziste: '',
         odrediste: '',
@@ -8,8 +23,32 @@ const SearchCard = () => {
         brojPutnika: ''
     });
 
+    const [showPolazisteSuggestions, setShowPolazisteSuggestions] = useState(false);
+    const [showOdredisteSuggestions, setShowOdredisteSuggestions] = useState(false);
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handlePolazisteFocus = () => {
+        setShowPolazisteSuggestions(true);
+    };
+
+    const handleOdredisteFocus = () => {
+        setShowOdredisteSuggestions(true);
+    };
+
+    const selectCity = (field, city) => {
+        setFormData({ ...formData, [field]: city });
+        if (field === 'polaziste') setShowPolazisteSuggestions(false);
+        if (field === 'odrediste') setShowOdredisteSuggestions(false);
+    };
+
+    const filterCities = (input) => {
+        if (!input) return cities;
+        return cities.filter(city => 
+            city.toLowerCase().startsWith(input.toLowerCase())
+        );
     };
 
     const handleSubmit = (e) => {
@@ -25,7 +64,7 @@ const SearchCard = () => {
 
             <form className="search-card" onSubmit={handleSubmit}>
                 <div className="input-group">
-                    <div className="input-wrapper">
+                    <div className="input-wrapper autocomplete-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <circle cx="12" cy="10" r="3" strokeWidth="2"/>
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 21c-4-4-8-7.5-8-11a8 8 0 1116 0c0 3.5-4 7-8 11z"/>
@@ -37,11 +76,26 @@ const SearchCard = () => {
                             name="polaziste"
                             value={formData.polaziste}
                             onChange={handleChange}
+                            onFocus={handlePolazisteFocus}
+                            onBlur={() => setTimeout(() => setShowPolazisteSuggestions(false), 200)}
+                            autoComplete="off"
                         />
+                        {showPolazisteSuggestions && filterCities(formData.polaziste).length > 0 && (
+                            <ul className="autocomplete-dropdown">
+                                {filterCities(formData.polaziste).map(city => (
+                                    <li 
+                                        key={city}
+                                        onClick={() => selectCity('polaziste', city)}
+                                    >
+                                        {city}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </div>
                 </div>
                 <div className="input-group">
-                    <div className="input-wrapper">
+                    <div className="input-wrapper autocomplete-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -53,9 +107,25 @@ const SearchCard = () => {
                             name="odrediste"
                             value={formData.odrediste}
                             onChange={handleChange}
+                            onFocus={handleOdredisteFocus}
+                            onBlur={() => setTimeout(() => setShowOdredisteSuggestions(false), 200)}
+                            autoComplete="off"
                         />
+                        {showOdredisteSuggestions && filterCities(formData.odrediste).length > 0 && (
+                            <ul className="autocomplete-dropdown">
+                                {filterCities(formData.odrediste).map(city => (
+                                    <li 
+                                        key={city}
+                                        onClick={() => selectCity('odrediste', city)}
+                                    >
+                                        {city}
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
                     </div>
                 </div>
+
                 <div className="input-row">
                     <div className="input-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -63,7 +133,7 @@ const SearchCard = () => {
                             <path strokeLinecap="round" strokeWidth="2" d="M16 2v4M8 2v4M3 10h18"/>
                         </svg>
                         <input 
-                            type="text" 
+                            type="date" 
                             className="input-field" 
                             placeholder="Datum"
                             name="datum"
