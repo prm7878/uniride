@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 const SearchCard = () => {
     const cities = [
@@ -25,9 +27,16 @@ const SearchCard = () => {
 
     const [showPolazisteSuggestions, setShowPolazisteSuggestions] = useState(false);
     const [showOdredisteSuggestions, setShowOdredisteSuggestions] = useState(false);
+    const [showCalendar, setShowCalendar] = useState(false);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleDateChange = (date) => {
+        const formatted = date.toLocaleDateString('hr-HR');
+        setFormData({ ...formData, datum: formatted });
+        setShowCalendar(false);
     };
 
     const handlePolazisteFocus = () => {
@@ -127,19 +136,35 @@ const SearchCard = () => {
                 </div>
 
                 <div className="input-row">
-                    <div className="input-wrapper">
+                    <div className="input-wrapper calendar-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <rect x="3" y="4" width="18" height="18" rx="2" strokeWidth="2"/>
                             <path strokeLinecap="round" strokeWidth="2" d="M16 2v4M8 2v4M3 10h18"/>
                         </svg>
                         <input 
-                            type="date" 
+                            type="text" 
                             className="input-field" 
                             placeholder="Datum"
                             name="datum"
                             value={formData.datum}
-                            onChange={handleChange}
+                            onFocus={() => setShowCalendar(true)}
+                            readOnly
                         />
+                        {showCalendar && (
+                            <>
+                                <div 
+                                    className="calendar-overlay" 
+                                    onClick={() => setShowCalendar(false)}
+                                />
+                                <div className="calendar-container">
+                                    <Calendar
+                                        onChange={handleDateChange}
+                                        minDate={new Date()}
+                                        locale="hr-HR"
+                                    />
+                                </div>
+                            </>
+                        )}
                     </div>
                     <div className="input-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
