@@ -1,5 +1,5 @@
 .login-wrapper {
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column; /* stavimo kolonu da tekst bude ispod forme */
   justify-content: center;
