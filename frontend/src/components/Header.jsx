@@ -24,7 +24,7 @@ const Header = () => {
                     </Link>
                     <button className="btn btn-primary">Objavi prijevoz</button>
 
-                    <div className="avatar-container">
+                    <div className="relative inline-block avatar-container">
                     <button className="avatar" onClick={buttonHandler}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -33,7 +33,9 @@ const Header = () => {
 
                     {visible && (
                         <div className="dropdown-menu">
-                            Dropdown content
+                            <div className="">
+                            Dropdown is open
+                            </div>
                         </div>
                     )}
                     </div>

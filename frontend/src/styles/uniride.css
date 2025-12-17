@@ -224,6 +224,24 @@ nav {
     color: var(--text-secondary);
 }
 
+.avatar-container {
+    position: relative; /* already done */
+    display: inline-block; /* shrink to avatar size */
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.5rem); /* 0.5rem = 8px gap */
+    right: 0;
+    width: 200px;
+    background-color: #22222e; /* dark background */
+    color: #d1d5db; /* light text */
+    border-radius: 6px;
+    padding: 12px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
 /* Main Container */
 .main-container {
     position: relative;
