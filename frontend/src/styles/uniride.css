@@ -464,6 +464,21 @@ nav {
 .react-calendar__century-view .react-calendar__tile {
     padding: 16px !important;
 }
+
+/* centriranje mjeseca i godine na kalendaru */
+.react-calendar__navigation__label__labelText {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+    line-height: 1 !important;
+}
+
+.react-calendar__navigation__label {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
 /* Search Section */
 .search-section {
     animation: slideUp 0.8s ease-out;

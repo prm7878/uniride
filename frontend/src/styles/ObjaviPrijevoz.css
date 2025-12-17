@@ -1,0 +1,515 @@
+/* ObjaviPrijevoz.css - stilovi za formu */
+
+/* Objavi Section */
+.objavi-section {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: slideUp 0.8s ease-out;
+}
+
+/* Header sekcija */
+.objavi-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.objavi-header .tagline {
+    justify-content: center;
+}
+
+.objavi-header h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.objavi-header h1 span {
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.objavi-header .subtitle {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Form */
+.objavi-form {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Section */
+.form-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+}
+
+.section-title svg {
+    width: 22px;
+    height: 22px;
+    color: var(--accent-secondary);
+}
+
+/* Input Groups */
+.objavi-form .input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.objavi-form .input-row-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.objavi-form .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.objavi-form .input-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+/* Autocomplete wrapper */
+.objavi-form .autocomplete-wrapper {
+    position: relative;
+}
+
+.objavi-form .autocomplete-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-top: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100;
+    list-style: none;
+    padding: 0.5rem 0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.objavi-form .autocomplete-dropdown li {
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: background 0.2s;
+}
+
+.objavi-form .autocomplete-dropdown li:hover {
+    background: var(--bg-input);
+}
+
+/* Calendar wrapper */
+.objavi-form .calendar-wrapper {
+    position: relative;
+}
+
+.objavi-form .calendar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+}
+
+.objavi-form .calendar-container {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* React Calendar Custom Styling */
+.objavi-form .react-calendar {
+    background: #27272a !important;
+    border: 1px solid #7447a8 !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    font-family: inherit !important;
+    width: 320px !important;
+}
+
+.objavi-form .react-calendar__navigation {
+    display: flex !important;
+    height: 44px !important;
+    margin-bottom: 12px !important;
+}
+
+.objavi-form .react-calendar__navigation button {
+    background: transparent !important;
+    color: #e2e8f0 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    min-width: 44px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    transition: background 0.2s !important;
+}
+
+.objavi-form .react-calendar__navigation button:enabled:hover,
+.objavi-form .react-calendar__navigation button:enabled:focus {
+    background: #8b4ac7 !important;
+}
+
+.objavi-form .react-calendar__navigation button:disabled {
+    opacity: 0.3 !important;
+}
+
+.objavi-form .react-calendar__month-view__weekdays {
+    text-align: center !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    text-transform: uppercase !important;
+}
+
+.objavi-form .react-calendar__month-view__weekdays__weekday {
+    padding: 8px !important;
+}
+
+.objavi-form .react-calendar__month-view__weekdays__weekday abbr {
+    text-decoration: none !important;
+}
+
+.objavi-form .react-calendar__tile {
+    background: transparent !important;
+    color: #ffffff !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 14px !important;
+    border-radius: 8px !important;
+    border: none !important;
+    transition: all 0.2s !important;
+}
+
+.objavi-form .react-calendar__tile:enabled:hover,
+.objavi-form .react-calendar__tile:enabled:focus {
+    background: #3a3355 !important;
+    color: #fff !important;
+}
+
+.objavi-form .react-calendar__tile--now {
+    background: #463355 !important;
+    color: #fff !important;
+}
+
+.objavi-form .react-calendar__tile--active {
+    background: #9c3bf6 !important;
+    color: #fff !important;
+}
+
+.objavi-form .react-calendar__tile--active:enabled:hover,
+.objavi-form .react-calendar__tile--active:enabled:focus {
+    background: #8b25eb !important;
+}
+
+.objavi-form .react-calendar__tile--neighboringMonth {
+    color: #574769 !important;
+}
+
+.objavi-form .react-calendar__tile:disabled {
+    color: #5e4769 !important;
+    opacity: 0.5 !important;
+}
+
+.objavi-form .react-calendar__month-view__days__day--weekend {
+    color: #a655f7 !important;
+}
+
+.objavi-form .react-calendar__year-view .react-calendar__tile,
+.objavi-form .react-calendar__decade-view .react-calendar__tile,
+.objavi-form .react-calendar__century-view .react-calendar__tile {
+    padding: 16px !important;
+}
+
+.objavi-form .react-calendar__navigation__label__labelText {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+    line-height: 1 !important;
+}
+
+.objavi-form .react-calendar__navigation__label {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* ========== TIME PICKER ========== */
+.objavi-form .time-wrapper {
+    position: relative;
+}
+
+.objavi-form .time-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+}
+
+.objavi-form .time-picker-container {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background: #27272a;
+    border: 1px solid #7447a8;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    width: 240px;
+}
+
+.objavi-form .time-picker-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #e2e8f0;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #3f3f46;
+}
+
+.objavi-form .time-picker-header svg {
+    width: 20px;
+    height: 20px;
+    color: #a655f7;
+}
+
+.objavi-form .time-picker-body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.objavi-form .time-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.objavi-form .time-column-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #a1a1aa;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.objavi-form .time-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-height: 160px;
+    overflow-y: auto;
+    padding: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: #7447a8 #27272a;
+}
+
+.objavi-form .time-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.objavi-form .time-scroll::-webkit-scrollbar-track {
+    background: #27272a;
+    border-radius: 3px;
+}
+
+.objavi-form .time-scroll::-webkit-scrollbar-thumb {
+    background: #7447a8;
+    border-radius: 3px;
+}
+
+.objavi-form .time-option {
+    width: 48px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.objavi-form .time-option:hover {
+    background: #3a3355;
+}
+
+.objavi-form .time-option.active {
+    background: #9c3bf6;
+    color: #fff;
+}
+
+.objavi-form .time-separator {
+    font-size: 24px;
+    font-weight: 700;
+    color: #a655f7;
+    margin-top: 32px;
+}
+
+.objavi-form .time-picker-footer {
+    display: flex;
+    gap: 8px;
+}
+
+.objavi-form .time-btn {
+    flex: 1;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.objavi-form .time-btn-cancel {
+    background: transparent;
+    color: #a1a1aa;
+    border: 1px solid #3f3f46;
+}
+
+.objavi-form .time-btn-cancel:hover {
+    background: #3f3f46;
+    color: #e2e8f0;
+}
+
+.objavi-form .time-btn-confirm {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+    color: #fff;
+}
+
+.objavi-form .time-btn-confirm:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Cijena input */
+.cijena-group {
+    max-width: 250px;
+}
+
+.cijena-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.cijena-input-wrapper .input-field {
+    padding-right: 4rem;
+}
+
+.currency {
+    position: absolute;
+    right: 1.25rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    pointer-events: none;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 1.125rem;
+    font-size: 1.1rem;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.submit-btn svg {
+    width: 22px;
+    height: 22px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .objavi-form {
+        padding: 1.5rem;
+    }
+
+    .objavi-form .input-row,
+    .objavi-form .input-row-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .cijena-group {
+        max-width: 100%;
+    }
+
+    .objavi-form .calendar-container,
+    .objavi-form .time-picker-container {
+        left: 0;
+        transform: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .objavi-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .section-title {
+        font-size: 1rem;
+    }
+}

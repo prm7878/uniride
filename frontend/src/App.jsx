@@ -7,8 +7,13 @@ import SearchCard from "./components/SearchCard";
 import Footer from "./components/Footer";
 import Register from "./components/Register"
 import Login from "./components/Login";
+import ObjaviPrijevoz from './components/ObjaviPrijevoz';
+
+
 
 import "./styles/uniride.css";
+/*Za objavu prijevoza potreban CSS*/
+import "./styles/ObjaviPrijevoz.css";
 
 const App = () => {
   return (
@@ -21,6 +26,10 @@ const App = () => {
           <Routes>
             
             <Route path="/" element={<SearchCard />} />
+
+            <Route path="/objavi" element={<ObjaviPrijevoz />} />
+
+            {/* Prijava */}
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
           </Routes>

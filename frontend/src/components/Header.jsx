@@ -38,7 +38,10 @@ const Header = () => {
                     <Link to="/login">
                         <button className="btn btn-ghost">Prijava</button>
                     </Link>
+                    <Link to="/objavi">
                     <button className="btn btn-primary">Objavi prijevoz</button>
+                    </Link>
+                    <div className="avatar">
 
                     <div className="relative inline-block avatar-container" ref={dropdownRef}>
                     <button className="avatar" onClick={buttonHandler}>
