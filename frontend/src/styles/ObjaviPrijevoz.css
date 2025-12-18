@@ -101,6 +101,27 @@
     color: var(--text-secondary);
 }
 
+/* Input wrapper sa SVG ikonom */
+.objavi-form .input-wrapper {
+    position: relative;
+}
+
+.objavi-form .input-wrapper > svg {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: var(--text-muted);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.objavi-form .input-wrapper .input-field {
+    padding-left: 3.5rem;
+}
+
 /* Autocomplete wrapper */
 .objavi-form .autocomplete-wrapper {
     position: relative;
@@ -446,19 +467,20 @@
     max-width: 250px;
 }
 
-.cijena-input-wrapper {
+.objavi-form .cijena-input-wrapper {
     position: relative;
-    display: flex;
-    align-items: center;
 }
 
-.cijena-input-wrapper .input-field {
+.objavi-form .cijena-input-wrapper .input-field {
+    padding-left: 3.5rem;
     padding-right: 4rem;
 }
 
 .currency {
     position: absolute;
     right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
     color: var(--text-muted);
     font-weight: 500;
     pointer-events: none;
