@@ -21,7 +21,7 @@ export default function Login() {
   return (
     <div className="login-wrapper">
       <form className="login-form" onSubmit={handleSubmit}>
-        <h2 className="login-title">Register</h2>
+        <h2 className="login-title"><b>Register</b></h2>
 
         <input 
             type="text"
